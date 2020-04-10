@@ -1,5 +1,5 @@
-const items_model = require("./items/item-index");
+const users_model = require("./users/users-index");
 
 module.exports = {
-    items_model
+    users_model
 };

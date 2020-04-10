@@ -6,10 +6,9 @@ const data_path = require("./config").data_path;
 
 const remove = async (id) => {
     try {
-
         if (!id) {
             return {
-                "message": "Insert User, mandatory attributes are id, email"
+                "message": "Insert User, mandatory attributes are id"
             }
         }
 
@@ -22,16 +21,12 @@ const remove = async (id) => {
                 "message": "Remove User Sucessfull"
             }
         } else {
-            return {
-                "message": "item does not exist"
-            }
+            return {"message": "USER_DOES_NOT_EXIST"};
         }
 
     } catch (e) {
         console.error(e);
-        return {
-            "message": "Delete User Failed"
-        };
+        throw new Error("DELETE_USER_FAILED");
     }
 };
 

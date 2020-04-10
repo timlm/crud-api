@@ -6,8 +6,6 @@ const error_handler = require("./middleware/error-handler");
 const createError = require("http-errors");
 
 const usersRouter = require('./routers/users');
-const itemsRouter = require('./routers/items');
-
 
 const app = express();
 app.use(morgan('dev'));
@@ -17,9 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 
 
-
 app.use('/users', usersRouter);
-app.use('/items', itemsRouter);
 
 /* GET home page. */
 app.get('/', function(req, res, next) {
@@ -27,7 +23,7 @@ app.get('/', function(req, res, next) {
 });
 
 
-// app.use(error_handler);
+app.use(error_handler);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,24 +6,19 @@ const data_path = require("./config").data_path;
 
 const insert = async (user = {}) => {
     try {
-        if (!user.id || !user.email) {
-            return {
-                "message": "Insert item, mandatory attributes are id, email"
-            }
-        }
         const users = JSON.parse(await (read_file(data_path)));
+        const usersIdList = users.map(value => value.id);
+        user.id = Math.max(...usersIdList) + 1;
         const new_users_array = users.concat(user);
         await write_file(data_path, JSON.stringify(new_users_array, null, 4));
         return {
-            "message": "Insert item Sucessfull",
-            "inserted_item": item
+            "message": "Insert user Sucessfull",
+            "inserted_user": user
         }
 
     } catch (e) {
         console.error(e);
-        return {
-            "message": "Insert Item Failed"
-        };
+        throw new Error("Insert user Failed");
     }
 };
 

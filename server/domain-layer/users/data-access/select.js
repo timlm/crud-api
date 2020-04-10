@@ -6,16 +6,10 @@ const data_path = require("./config").data_path;
 const select = async (searched_user = {}) => {
     try {
         const {id: searched_user_id = -1, email: searched_user_email = ""} = searched_user;
-
-        if (!searched_user_id && !searched_user_email) {
-            return {
-                "message": "select user, missing attribute. Mandatory attributes are id or email"
-            }
-        }
         const users = JSON.parse(await (read_file(data_path)));
-        const found_user = users.find(user => user.id === searched_user_id);
+        const found_user = users.find(user => user.id === searched_user_id || user.email === searched_user_email);
         if (!found_user) {
-            return {}
+            return null;
         } else {
             return found_user;
         }
