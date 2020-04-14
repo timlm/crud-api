@@ -56,14 +56,14 @@ GET /users
 ```
 
 __  __
-####Get a user
+#### Get a user
 ```
 GET /users/:id
 ```
 'id' is the primary key of user
 
 __  ___
-####Create a new user
+#### Create a new user
 ```
 POST /users
 ```
@@ -80,7 +80,7 @@ Body example
 }
 ```
 __  __
-####Update an item
+#### Update an item
 ```
 /users/:id
 ```
@@ -101,7 +101,7 @@ Body example
 }
 ```
 __  __
-####Delete an user
+#### Delete an user
 ```
 /users/:id
 ```
@@ -114,12 +114,12 @@ The process will fail if there is no user with that id
 
 # Project Specifications
 
-##Users stories
+## Users stories
 
 ```
 Some notabene will be written in italic 
 ```
-####As an simple user, I want to access of the list of all users stored in the server
+#### As an simple user, I want to access of the list of all users stored in the server
 A view list of all users saved in the application   
 An user will show his email, his age, his firstname and his lastname
   
@@ -154,7 +154,7 @@ The update view can be access by the user list or the user detail
 *We can perhaps reuse the creation form*
 ___
 
-##Angular best practices
+## Angular best practices
 Throught the project, would like you to follow the Angular style guide including the following:
 - Structural folder structure
 - Single responsability
