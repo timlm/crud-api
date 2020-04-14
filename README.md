@@ -7,9 +7,7 @@ Your project is to develop an Front-end Angular application, using thoses api.
 
 ## Getting started with the sever
 
-The back-end provide an api for getting, creating, updating et deleting an user
-  
-    
+The back-end provide an api to get, create, update and delete an user    
 
 Installation is done using the command:  
 `npm install`
@@ -17,16 +15,16 @@ Installation is done using the command:
 Run the server with the command:  
 `npm start`
 
-The server is now available at localhost:3000
+The server is now available at localhost:3000, check the url to see if you have `Server is up`
 
 ### 'Users' model
 
-Twenty users existed already  
-No Database installation needed, for that mini project, the data users will be stored in a json file.  
+Twenty users already exist  
+No Database installation is needed, for that mini project, the user's data will be stored in a json file.  
 ```
 ./server/domain-layer/data-access/data/users.json
 ```
-In case the file get corrupted, replace the file by the backup one. It has the original data.
+In case datas get corrupted, replace the file by the backup one. It has the original data.
 ```
 ./server/domain-layer/data-access/data/users-backup.json
 ```
@@ -67,7 +65,7 @@ __  ___
 ```
 POST /users
 ```
-Creation will fail there is already a user with the same email  
+If a user with the same email already exist, the creation will fail.
 The attributs: "email", "firstname", "lastname", "isActive" are mandatory when creating a new user    
 
 Body example  
@@ -80,15 +78,13 @@ Body example
 }
 ```
 __  __
-#### Update an item
+#### Update an user
 ```
 /users/:id
 ```
 
 'id' is the primary key of an user  
-Creation will fail if the users updated has a email
-already register by someone else  
-
+If the user's email is updated and is already taken by someone, the update will fail. 
 The attributs: "email", "firstname", "lastname", "isActive" are mandatory when updating a new user    
 
 Body example  
@@ -107,10 +103,7 @@ __  __
 ```
 
 'id' is the primary key of an user  
-The process will fail if there is no user with that id
-
-
-
+The deletion will fail if no user with the corresponding id
 
 # Project Specifications
 
@@ -119,7 +112,7 @@ The process will fail if there is no user with that id
 ```
 Some notabene will be written in italic 
 ```
-#### As an simple user, I want to access of the list of all users stored in the server
+#### As a simple user, I want to access the list of all users stored in the server
 A view list of all users saved in the application   
 An user will show his email, his age, his firstname and his lastname
   
@@ -131,31 +124,40 @@ Severals features needed:
 *Unfortunately our back api does not provide filters, we have to do thoses feature on the front-end app, It will be best to not use Pipe for ordering and filtering as said by the angular guide*
 
 ___
-#### As an simple user, I want to access to the detail of one user
-The detail view provided all the informations of the user
+#### As a simple user, I want to access to the detail of an user
+The detail view provide all the information of the user
 ___
-#### As an simple user, I want to delete an existing user
+#### As a simple user, I want to deactivate an user
+Deactivate an user pressing a button on the detail view or the list view
+The user detail should not be accessible when deactivated and should be redirected to a 403 page
+___
+#### As a simple user, I want to delete an existing user
 Delete an user pressing a button on the detail view or the list view
 
 *Should I redirect the user after the user is deleted on the detail view ?*   
 ___
-#### As an simple user, I want to create a new user
+#### As a simple user, I want to create a new user
 
 A complete and valid form to create a new user
 
 * Using validators type with errors message
-* Be careful with the mandatories attributs
+* Be careful with the mandatory attributes
+* Corresponding errors in the validators to inform the user if the operation has failed
 
 *Our back end does not have a correct sanitizing, We have to be very strict on the input type for each attributs*
 ___
-#### As an simple user, I want to update an existing user
+#### As a simple user, I want to update an existing user
 The update view can be access by the user list or the user detail
 
 *We can perhaps reuse the creation form*
 ___
 
+#### As a simple user, I want to have a correct error handling for 40x, 50x pages
+When going an unknow route, forbidden route or if there is an internal server error, the user should be redirected to appropriate pages
+___
+
 ## Angular best practices
-Throught the project, would like you to follow the Angular style guide including the following:
+Through the project, we would like you to follow the Angular style guide including the following:
 - Structural folder structure
 - Single responsability
 - Using multiples modules
@@ -171,4 +173,4 @@ Throught the project, would like you to follow the Angular style guide including
 ## UX/UI Integration
 There is no UX design prepared, the design will come from your experience on web application.  
 There is no UI integration provided at the beginning. You are free to chose whatever you want.  
-Using custom and modern CSS is still appreciated
+Using custom and modern CSS is still appreciated (ex: css grids, flexbox, responsive....)
