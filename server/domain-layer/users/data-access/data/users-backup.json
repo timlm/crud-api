@@ -238,17 +238,5 @@
         "phone": "06 84 54 13 34",
         "address": "204 Anthony Street, Gibbsville, Nebraska",
         "favoriteFruit": "cherry"
-    },
-    {
-        "email": "vanessa.head2@unisure.co.uk",
-        "isActive": true,
-        "firstname": "Vanessa",
-        "lastname": "Head",
-        "age": 24,
-        "company": "UNISURE",
-        "phone": "06 82 24 26 18",
-        "address": "808 Gold Street, Bridgetown, Kentucky",
-        "favoriteFruit": "apple",
-        "id": 21
     }
 ]
