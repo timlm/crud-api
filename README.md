@@ -21,3 +21,9 @@ Update an item
 
 Delete an item
 /items/:id
+
+Decoupage en module "correct" (au moins 2)
+Couche de service
+Gestion des erreurs
+Routing dans angular et ajout d'un exemple de guard (ex isActive)
+Formulaire de création (reactive js) +  Validators
