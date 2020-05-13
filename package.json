@@ -6,9 +6,10 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "domain-layer": "file:./server/domain-layer",
     "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
+    "domain-layer": "file:./server/domain-layer",
     "express": "~4.16.1",
     "helmet": "^3.22.0",
     "http-errors": "~1.6.3",
