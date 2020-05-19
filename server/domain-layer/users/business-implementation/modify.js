@@ -12,7 +12,7 @@ const modify = async (user) => {
         throw new Error ("EMAIL_IS_ALREADY_ASSIGN_TO_SOMEONE_ELSE");
     }
 
-    if (!user.id || !user.email || !user.firstname || !user.lastname || !user.isActive) {
+    if (!user.id || !user.email || !user.firstname || !user.lastname || user.isActive == null) {
         throw new Error("Missing mandatory attributes: id, email, firstname, lastname, isActive");
     }
 
